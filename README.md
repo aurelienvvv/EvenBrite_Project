@@ -1,4 +1,4 @@
-(https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif)
+![enter image description here](https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif)
 
 # EvenBriteProject
 
