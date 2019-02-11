@@ -17,7 +17,5 @@ Bientôt ...
 `$ rails db:seed`
 
 
-puis : http://localhost:3000/
-
 
 À Bientôt :relaxed:
