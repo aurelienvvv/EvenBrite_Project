@@ -1,24 +1,23 @@
-# README
+# EvenBriteProject
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projet réalisé par Nicolas Lucchetta et Aurélien Verschueren :v:
 
-Things you may want to cover:
+## Dispo sur Heroku : 
 
-* Ruby version
+Bientôt ...
 
-* System dependencies
+## Installation du repo
 
-* Configuration
+`$ bundle install`
 
-* Database creation
+`$ rails db:create`
 
-* Database initialization
+`$ rails db:migrate`
 
-* How to run the test suite
+`$ rails db:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+puis : http://localhost:3000/
 
-* ...
+
+À Bientôt :relaxed:
