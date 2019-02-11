@@ -1,8 +1,9 @@
 class User < ApplicationRecord
 
-  ### Envoie un mail après la création d'un event ###
+  attr_accessor :users
 
-  after_create :welcome_send
+  
+  after_create :welcome_send #-> Envoie un mail après la création d'un user
 
   has_many :attendances
   has_many :events, through: :attendances

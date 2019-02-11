@@ -1,4 +1,4 @@
 # Preview all emails at http://localhost:3000/rails/mailers/event_mailer
-class EventMailerPreview < ActionMailer::Preview
+class AttendanceMailerPreview < ActionMailer::Preview
 
 end
