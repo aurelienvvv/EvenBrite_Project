@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @admin.first_name %>, un nouveau participant à ton evenement !</h1>
+    <p>
+     Tu as un nouveau participant à ton evenement <%= @event.title %> ! <i class="em em---1"></i>
+    </p>
+    <p>
+      Le nom du participant est <%= @participant.first_name %> <%= @participant.last_name %> !
+    </p>
+    <p>
+      Tu peux retrouver toutes les infos sur ce nouvel invité sur : <%= @url %> 
+    </p>
+    <p> À bientôt <%= @admin.first_name %> <i class="em em-heart_eyes_cat"></i>!
+  </body>
+</html>
