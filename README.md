@@ -1,6 +1,6 @@
 # EvenBriteProject
 
-Projet réalisé par Nicolas Lucchetta et Aurélien Verschueren :v:
+Projet de la semaine 6 de THP réalisé par Nicolas Lucchetta et Aurélien Verschueren :v:
 
 ## Dispo sur Heroku : 
 
