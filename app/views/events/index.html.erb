@@ -1,0 +1,23 @@
+<style>
+.card{margin: 1%}
+</style>
+
+<section class="jumbotron text-center">
+	<div class="container">
+		<h1 class="jumbotron-heading">Bienvenue sur Event Brite !</h1>
+		<p>Le meilleur site pour les evenements on vous jure !!</p>
+	</div>
+</section>
+
+<div class="d-flex align-content-between flex-wrap">
+	<% Event.all.each do |event| %>
+	<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="https://media.giphy.com/media/4oMoIbIQrvCjm/giphy.gif" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title"><%= event.title %></h5>
+			<p class="card-text"><%= event.description%></p>
+			<%= link_to "Voir plus", event_path(event.id), class:"btn btn-primary" %>
+		</div>
+	</div>  
+	<% end %>
+</div>

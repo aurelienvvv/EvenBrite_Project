@@ -8,11 +8,11 @@ class AttendanceMailer < ApplicationMailer
     #on récupère l'instance de Event
     @event = Event.find(@attendance.event_id)
 
-    #on récupère l'instance User avec l'admin
-    @admin = User.find(Event.find(@attendance.event_id).admin_id)
-
     #on récupère l'instance User avec le participant
     @participant = User.find(@attendance.participant_id)
+
+    #on récupère l'instance User avec l'admin
+    @admin = User.find(Event.find(@attendance.event_id).admin_id)
 
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
     @url  = 'http://event-brite-project.fr/' 

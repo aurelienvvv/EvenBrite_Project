@@ -1,0 +1,11 @@
+<section class="jumbotron text-center">
+	<div class="container">
+		<h1 class="jumbotron-heading"><%= @event.title %></h1><br><br>
+		<p><b><%= @event.description %></b></p><br>
+		<p>Créateur de l'evenement :<b> <%= @admin_of_event.email %></b>
+		<p>Nombre de participants : <b><%= @participants %></b></p><br><br>
+		<p>Lieu : <b><%= @event.location %></b></p>
+		<br><br><p>Date de début : <b><%= @event.start_date %></b></p>
+		<p>Date de fin : <b><%= @date_end %></b></p>
+	</div>
+</section>

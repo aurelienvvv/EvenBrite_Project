@@ -1,0 +1,46 @@
+<style>
+.card{margin: 1%}
+</style>
+
+<!-- Si ce n'est pas la page du current User, il ne peut pas voir cette page -->
+<% if current_user == @user %>
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">
+      <% if @user.first_name.nil? %>
+        Hey user<%= @user.id %> !
+        <% else %>
+        Hey <%= @user.first_name %> !</h1>    
+      <% end %><br>
+    <%= link_to 'Edit Profile', edit_user_registration_path, class:"btn btn-primary my-2" %>
+  </div>
+</section>
+
+<h3 class="text-center">Voici les events que tu as créés :</h3><br>
+<div class="d-flex align-content-between flex-wrap">
+  <% @event_create.each do |event| %>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://media.giphy.com/media/3o7bue1I6RarmeDjW0/giphy.gif" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= event.title %></h5>
+      <p class="card-text"><%= event.description%></p>
+      <%= link_to "Voir l'event", event_path(event.id), class:"btn btn-primary" %>
+    </div>
+  </div>  
+  <% end %>
+</div>
+
+
+
+
+<!-- Si ce n'est pas la page du current User, il ne peut pas voir cette page -->
+<% else %>
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading"><h1> Vous n'avez pas accès à cette page </h1>
+  </div>
+</section>
+
+<% end %>
