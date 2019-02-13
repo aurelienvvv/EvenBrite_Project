@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :edit, :new]
+  before_action :authenticate_user!, only: [ :edit, :new]
 
   def index
     @events = Event.all
@@ -10,8 +10,10 @@ class EventsController < ApplicationController
     @participants = Attendance.where(event_id: @event.id)
     @admin_of_event = @event.admin
     @date_end = @event.start_date + @event.duration
-    @participant_current = Attendance.where(event_id: @event.id).find_by(participant_id: current_user.id)
-    @button_condition = @participant_current.nil? == true && current_user != @event.admin
+    if current_user.nil? == false
+      @participant_current = Attendance.where(event_id: @event.id).find_by(participant_id: current_user.id)
+      @button_condition = @participant_current.nil? && current_user != @event.admin
+    end
   end
 
   def edit

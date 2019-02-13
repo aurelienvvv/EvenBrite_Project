@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-
+=begin
   before(:each) do 
     @event = FactoryBot.create(:event)   
   end
@@ -92,6 +92,6 @@ RSpec.describe Event, type: :model do
       it { expect(@event).to belong_to(:admin).class_name("User") }
   end
 end
-
+=end
 
 end
