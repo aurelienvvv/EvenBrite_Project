@@ -18,6 +18,10 @@ https://evennntbriteee.herokuapp.com/
 
 `$ rails db:seed`
 
+`$ rails s`
+
+http://localhost:3000/
+
 
 
 À Bientôt :relaxed:
