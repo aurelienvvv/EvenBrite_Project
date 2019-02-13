@@ -3,9 +3,17 @@
 		<h1 class="jumbotron-heading"><%= @event.title %></h1><br><br>
 		<p><b><%= @event.description %></b></p><br>
 		<p>Créateur de l'evenement :<b> <%= @admin_of_event.email %></b>
-		<p>Nombre de participants : <b><%= @participants %></b></p><br><br>
+		<p>Nombre de participants : <b><%= @participants.count %></b></p><br><br>
 		<p>Lieu : <b><%= @event.location %></b></p>
 		<br><br><p>Date de début : <b><%= @event.start_date %></b></p>
 		<p>Date de fin : <b><%= @date_end %></b></p>
+
+		<% if @button_condition %>
+		<%=link_to "Rejoindre l'event", {:controller => "charges", :action => "new", :event_id => @event.id} , class:"btn btn-primary my-2"%>
+		<% end %>
+
+		<% if @admin_of_event == current_user %>
+		<%=link_to "Mon espace événement",{:controller => "attendances", :action => "index", :event_id => @event.id} , class:"btn btn-primary my-2"%>
+		<% end %>
 	</div>
 </section>

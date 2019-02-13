@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'dotenv-rails'
 
+gem 'stripe'
+
 gem 'devise'
 
 # Use CoffeeScript for .coffee assets and views

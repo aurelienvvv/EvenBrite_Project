@@ -1,0 +1,12 @@
+<p class="text-center">
+	<h3>Voici les participants de ton évènement :</h3>
+<% Attendance.where(event_id: @event).each do |attendance| %>
+	<p><%= User.find(attendance.participant_id).email %><p>
+<% end %></p>
+
+<%=link_to "Editer Event", edit_event_path(@event), class:"btn btn-primary my-2"%>
+
+<%= form_tag event_path(@event), method: "delete", style: "display: inline" do %>
+ <%= submit_tag "Supprime ton gossip", class:"btn btn-light" %>
+<% end %>
+

@@ -1,0 +1,17 @@
+<html>
+<body> 
+	<div class="container col-md-8 order-md-1">
+		<div class="form-group"><br><br>
+			<h3> Dernière étape </h3>
+			<p> Détails : </p>
+			<p><b> Nom de l'event : <%= @event_name %> </b></p>
+			<p><b> Prix : <%= @event_price %> € </b></p>
+	<%= form_tag url_for(action: 'create'), method: "post" do %>
+	<%= label_tag 'Ajouter votre compte stripe' %>
+	<%= text_field_tag 'stripe', @stripe, class:'form-control' %> <br /> 
+
+	<%= submit_tag "Finaliser l'inscription", class:"btn btn-light" %> <% end %>
+
+</div>
+</body> 
+</html>
