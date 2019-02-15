@@ -1,23 +1,30 @@
 <style>
 .card{margin: 1%}
+.contain{margin-left: 10%;margin-right: 10%; background-color: }
 </style>
 
-<section class="jumbotron text-center">
-	<div class="container">
-		<h1 class="jumbotron-heading">Bienvenue sur Event Brite !</h1>
-		<p>Le meilleur site pour les evenements on vous jure !!</p>
-	</div>
-</section>
-
+<!-- Light caption -->
+<div class="contain">
 <div class="d-flex align-content-between flex-wrap">
 	<% Event.all.each do |event| %>
-	<div class="card" style="width: 18rem;">
-		<img class="card-img-top" src="https://media.giphy.com/media/4oMoIbIQrvCjm/giphy.gif" alt="Card image cap">
-		<div class="card-body">
-			<h5 class="card-title"><%= event.title %></h5>
-			<p class="card-text"><%= event.description%></p>
-			<%= link_to "Voir plus", event_path(event.id), class:"btn btn-primary" %>
+		<div class="card" style="width: 30rem;">
+		    <div class="card-image">
+		    	<a href="/events/"><% event.id %>
+		            <img src="https://media.giphy.com/media/4oMoIbIQrvCjm/giphy.gif">
+		        </a>
+		    </div>
+		    <div class="card-caption-overlay card-caption-overlay--3">
+		        <div class="card-caption">
+		            <div class="text-center">
+		                <%=event.title %>
+		                </a>
+		                <span class="clearfix"></span>
+		                <span class="text-sm"><%= event.description%></span><br><br>
+		                <div class="text-center"><%= link_to "Participer", event_path(event.id), class:"btn btn-base-2"%></div>
+		            </div>
+		        </div>
+		    </div>
 		</div>
-	</div>  
 	<% end %>
+</div>
 </div>

@@ -1,19 +1,43 @@
-<section class="jumbotron text-center">
-	<div class="container">
+<div class="row row-no-gutters">
+  <div class="col-sm-3">
+
+
+
+
+ <% if @event.image.attached? %>
+<%= image_tag @event.image, alt:'image',width: 250 %>
+<%end%>
+<% if %>
+	<%= form_tag event_images_path(@event), multipart: true do %>
+	<%= file_field_tag :image %>
+	<%= submit_tag "mettre à jour", class:"btn btn-primary my-2" %>
+<%end%>
+<% end %>
+
+<% if @button_condition %>
+		<%=link_to "Rejoindre l'event", {:controller => "charges", :action => "new", :event_id => @event.id} , class:"btn btn-base-2 my-2"%>
+		<% end %>
+
+<% if @admin_of_event == current_user %>
+<%=link_to "Mon espace événement",{:controller => "attendances", :action => "index", :event_id => @event.id} , class:"btn btn-primary my-2"%>
+<% end %>				
+</div>
+
+
+
+
+
+  <div class="col-sm-6"> 
 		<h1 class="jumbotron-heading"><%= @event.title %></h1><br><br>
 		<p><b><%= @event.description %></b></p><br>
 		<p>Créateur de l'evenement :<b> <%= @admin_of_event.email %></b>
 		<p>Nombre de participants : <b><%= @participants.count %></b></p><br><br>
 		<p>Lieu : <b><%= @event.location %></b></p>
 		<br><br><p>Date de début : <b><%= @event.start_date %></b></p>
-		<p>Date de fin : <b><%= @date_end %></b></p>
+		<p>Date de fin : <b><%= @date_end %></b></p></div>
+  <div class="col-sm-3"></div>
+</div>
 
-		<% if @button_condition %>
-		<%=link_to "Rejoindre l'event", {:controller => "charges", :action => "new", :event_id => @event.id} , class:"btn btn-primary my-2"%>
-		<% end %>
 
-		<% if @admin_of_event == current_user %>
-		<%=link_to "Mon espace événement",{:controller => "attendances", :action => "index", :event_id => @event.id} , class:"btn btn-primary my-2"%>
-		<% end %>
 	</div>
 </section>
